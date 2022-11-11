@@ -79,6 +79,23 @@ rules for creating a variable:
 
 to call a variable you can just `$variableName` or you concatinate it using `.`s i.e `"".$variable.""`.
 
+### Variable scope
+
+in php variables can be declared anywhere in the script
+
+the scope of the script is the part where the variable  can be referenced or used.
+
+1. Global
+   * this is a variable declared outside a function and it can be only accessed  outside the function.
+2. local
+   * this is a variable declared within a function and it can only be accessed within that function.
+3. static
+   * Normally, when a function is completed/executed, all of its variables are deleted. However, sometimes we want a local variable NOT to be deleted. We need it for a further job.To do this, use the static keyword when you first declare the variable
+
+the global keyword can be used to access a global variable within a function. inside a function you `Global $variableName`
+
+PHP also stores all global variables in an array called $GLOBALS[index]. The index holds the name of the variable. This array is also accessible from within functions and can be used to update global variables directly.
+
 ## PHP IS A LOOSELY TYPED LANGUAGE
 
 this means you don't have to define what variable data type it will be, php automatically does that for you.
