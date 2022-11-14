@@ -41,6 +41,27 @@ functions:
 1. is_float() - check if float
 2. is_double() - also check if is float
 
+N/B: a number that is greater than PHP_FLOAT_MAX is considered infinite.
+
+to check if a number is infinite or not you:
+
+1. is_infinite()
+2. is_finite()
+
+## PHP NAN
+
+this stands for not a number. to check if a value is not a number..`is_nan()`.
+
+## PHP NUMERIC STRING
+
+this stands for an integer which is represented in form of a string `"23456"`. you use `is_numeric()` to check if it is a numeric string.
+
 ## OBJECTS
 
 a class is a template for objects.
+
+## CASTING FROM ONE DATATYPE TO ANOTHER
+
+to int:
+
+1. you preempt with a (int), (integer), intval().
