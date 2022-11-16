@@ -18,3 +18,11 @@ any other non-alphanumeric characters are replaced with a hexadecimal values. Af
 it contains the content of both $_GET and $_POST and $_COOKIE.
 
 this variable will be able to get the result from the data sent with both the GET and the POST.
+
+## $_PHP_SELF
+
+this is a global variable that returns the filename of the current executing file.
+
+you can also choose to use `$_SERVER["PHP_SELF"]`.
+
+this makes php send form data to itself instead of another form.
