@@ -112,3 +112,39 @@ INSERT INTO MultiverseGrade1 (firstname, reg_date) VALUES ("multiverse001", now(
 ```
 
 then the story starts being similar, store the sql query in a database then you pass it into your connection.
+
+## accessing the current index or id for an auto incrementing id
+
+you create a variable:
+
+`$last_id = $conn -> LastInsertId() - the PDO way`
+
+`$last_id = mysqli_insert_id($connection)` - this is the mysqli procedural way
+
+`$last_id  = $connection -> insert_id`
+
+## inserting multiple records at the same time
+
+to insert multiple records, you append to your initial variables the records:
+
+$sqlquery = `sql statement - first record`
+$sqlquery .= `sql statement - second record`
+
+then in where you pass it to your server you:
+
+`$connection -> multi_query($sqlquery`)`
+
+ensure you use the semi-colons at the end of each sql query.
+
+in PDO:
+
+```php
+...
+#inside your try statement
+$connection-> beginTransaction()
+$connection -> exec("your first sql insert record")
+$connection -> exec("your second sql insert record")
+$connection -> exec("your other sql insert records")
+$connection -> commit()
+...
+```
