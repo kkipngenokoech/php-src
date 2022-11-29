@@ -148,3 +148,23 @@ $connection -> exec("your other sql insert records")
 $connection -> commit()
 ...
 ```
+
+for mysqli procedural - `mysqli_multi_query()`
+
+## PREPARED STATEMENTS
+
+These statements are statements that prepare us from sql injections.
+
+a prepared statement is a feature used to execute the same /similar statement repeatedly with high efficiency.
+
+this is how the prepared statement works:
+
+1. you create a template(an sql statement template), send it to our database with certain values left unspecified, these are the parameters
+2. the database parses, compiles and performs query optimization on the sql statement template without executing it.
+3. execute - this is done at a later time. application binds the values with the parameters and then it is executed.
+
+the difference between the prepared statements and the sql statements:
+
+1. it reduces parsing time as the preparation of query is done only once.
+2. bound parameters minimize bandwidth to the server as you only need send the parameters and not the whole query.
+3. 
